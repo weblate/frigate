@@ -12,7 +12,7 @@
       "min_score": "Min. Skor",
       "recognized_license_plate": "Tanınan Plaka",
       "search_type": "Arama Türü",
-      "has_snapshot": "Fotoğrafı var",
+      "has_snapshot": "Anlık Fotoğrafı Var",
       "cameras": "Kameralar",
       "max_score": "Maks. Skor",
       "labels": "Etiketler",
@@ -24,7 +24,7 @@
       "min_speed": "Min. Hız",
       "sub_labels": "Alt Etiketler",
       "max_speed": "Maks. Hız",
-      "attributes": "Özellikler"
+      "attributes": "Öznitelikler"
     },
     "searchType": {
       "description": "Açıklama",
@@ -68,6 +68,6 @@
     "clear": "Benzerlik aramasını temizle"
   },
   "searchFor": "{{inputValue}} için Arat",
-  "search": "Arama",
+  "search": "Ara",
   "savedSearches": "Kayıtlı Aramalar"
 }
