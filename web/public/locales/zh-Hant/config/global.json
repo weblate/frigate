@@ -11,7 +11,7 @@
         },
         "min_volume": {
             "label": "最小音量",
-            "description": "執行音訊偵測所需的最小 RMS 音量門檻；數值越低，敏感度越高（例如：200 高、500 中、1000 低）。"
+            "description": "執行音訊偵測所需的最小 RMS 音量臨界值；數值越低，敏感度越高（例如：200 高、500 中、1000 低）。"
         },
         "listen": {
             "label": "監聽的音訊類型",
@@ -121,7 +121,7 @@
     },
     "mqtt": {
         "label": "MQTT",
-        "description": "連線到 MQTT 代理併發布遙測資料、快照和事件詳情的設定。",
+        "description": "連線到 MQTT 代理並發布遙測資料、快照和事件詳情的設定。",
         "enabled": {
             "label": "開啟 MQTT",
             "description": "啟用或停用 MQTT 整合，用於狀態、事件和快照。"
@@ -155,8 +155,8 @@
             "description": "可選的 MQTT 密碼；可以透過環境變數或金鑰提供。"
         },
         "tls_ca_certs": {
-            "label": "TLS CA 證書",
-            "description": "用於 TLS 連線到代理的 CA 證書路徑（用於自簽名證書）。"
+            "label": "TLS CA 憑證",
+            "description": "用於 TLS 連線到代理的 CA 憑證路徑（用於自簽署憑證）。"
         },
         "tls_client_cert": {
             "label": "用戶端憑證",
@@ -223,15 +223,15 @@
         "label": "代理",
         "description": "用於將 Frigate 整合到傳遞已認證使用者頭的反向代理後面的設定。",
         "header_map": {
-            "label": "請求頭對應",
-            "description": "將傳入的代理請求頭對應到 Frigate 使用者和角色欄位，用於基於代理的身份驗證。",
+            "label": "請求標頭對應",
+            "description": "將傳入的代理請求標頭對應到 Frigate 使用者和角色欄位，用於基於代理的身份驗證。",
             "user": {
-                "label": "使用者請求頭",
-                "description": "包含上游代理提供的已認證使用者名稱的請求頭。"
+                "label": "使用者標頭",
+                "description": "包含上游代理提供的已認證使用者名稱的請求標頭。"
             },
             "role": {
-                "label": "角色請求頭",
-                "description": "包含來自上游代理的已認證使用者角色或使用者組的請求頭。"
+                "label": "角色標頭",
+                "description": "包含來自上游代理的已認證使用者角色或使用者組的請求標頭。"
             },
             "role_map": {
                 "label": "角色對應",
@@ -240,11 +240,11 @@
         },
         "logout_url": {
             "label": "登出 URL",
-            "description": "透過代理登出時重定向使用者的 URL。"
+            "description": "透過代理登出時重新導向使用者的 URL。"
         },
         "auth_secret": {
             "label": "代理金鑰",
-            "description": "與 X-Proxy-Secret 請求頭進行比對的可選金鑰，用於驗證受信任的代理。"
+            "description": "與 X-Proxy-Secret 請求標頭進行比對的可選金鑰，用於驗證受信任的代理。"
         },
         "default_role": {
             "label": "預設角色",
@@ -252,7 +252,7 @@
         },
         "separator": {
             "label": "分隔符號",
-            "description": "用於分割代理請求頭中多個值的字元。"
+            "description": "用於分割代理請求標頭中多個值的字元。"
         }
     },
     "telemetry": {
@@ -279,7 +279,7 @@
             },
             "intel_gpu_device": {
                 "label": "Intel GPU 裝置",
-                "description": "當系統存在多個 Intel 顯示卡時，用於將顯示卡執行資料繫結到指定裝置的 PCI 匯流排位址或 DRM 裝置路徑（範例：/dev/dri/card1）。"
+                "description": "當系統存在多個 Intel 顯示卡時，用於將顯示卡執行資料綁定到指定裝置的 PCI 匯流排位址或 DRM 裝置路徑（範例：/dev/dri/card1）。"
             }
         },
         "version_check": {
@@ -521,10 +521,10 @@
     },
     "live": {
         "label": "即時監控觀看",
-        "description": "用於控制 jsmpeg 即時串流解析度與畫質的設定。此設定不影響使用 go2rtc 進行即時預覽的重新串流攝影機。",
+        "description": "用於控制 jsmpeg 即時串流解析度與畫質的設定。此設定不影響使用 go2rtc 進行即時預覽的轉發串流攝影機。",
         "streams": {
             "label": "即時監控流名稱",
-            "description": "配置的流名稱到用於即時監控播放的 restream/go2rtc 名稱的對應。"
+            "description": "將已設定的串流名稱，對應至用於即時監控觀看的 restream/go2rtc 名稱。"
         },
         "height": {
             "label": "即時監控高度",
@@ -552,15 +552,15 @@
         },
         "skip_motion_threshold": {
             "label": "跳過移動臨界值",
-            "description": "如果單幀中畫面變化超過此比例，偵測器將判定為無移動並立即重新校準。這可以節省 CPU 並減少閃電、風暴等情況下的誤報，但也可能會錯過真正的事件，如 PTZ 攝影機自動追蹤物件。你需要權衡取捨：是否犧牲少量錄製片段，換取更少無效影片與更低的誤檢。保持為空即可關閉該功能。"
+            "description": "若設為 0.0 到 1.0 之間的數值，當單幀中畫面變化超過此比例時，偵測器將判定為無移動並立即重新校準。這可以節省 CPU 並減少閃電、風暴等情況下的誤報，但也可能會錯過真正發生的事件，如 PTZ 攝影機自動追蹤物件。你需要權衡取捨：是否犧牲少量錄製片段，換取更少無效影片與更低的誤檢。保持為空即可關閉該功能。"
         },
         "improve_contrast": {
             "label": "改善對比度",
             "description": "在移動分析之前對幀應用對比度改善以幫助偵測。"
         },
         "contour_area": {
-            "label": "輪廓區域",
-            "description": "移動輪廓被計入所需的最小輪廓區域（像素）。"
+            "label": "輪廓面積",
+            "description": "移動輪廓被計入所需的最小輪廓面積（像素）。"
         },
         "delta_alpha": {
             "label": "Delta alpha",
@@ -576,7 +576,7 @@
         },
         "mask": {
             "label": "遮罩座標",
-            "description": "定義用於包含/排除區域的移動遮罩多邊形的有序 x,y 座標。"
+            "description": "定義用於包含／排除區域的移動遮罩多邊形的有序 x,y 座標。"
         },
         "mqtt_off_delay": {
             "label": "MQTT 關閉延遲",
@@ -599,22 +599,22 @@
         },
         "filters": {
             "label": "物件過濾器",
-            "description": "應用於偵測到的物件以減少誤報的過濾器（區域、比例、信心度）。",
+            "description": "套用於偵測物件的篩選條件，用於減少誤報（面積、比例、信心度）。",
             "min_area": {
-                "label": "最小物件區域",
-                "description": "此物件類型所需的最小邊界框區域（像素或百分比）。可以是像素（整數）或百分比（0.000001 到 0.99 之間的浮點數）。"
+                "label": "最小物件面積",
+                "description": "此物件類型所需的最小邊界框面積（像素或百分比）。可以是像素（整數）或百分比（0.000001 到 0.99 之間的浮點數）。"
             },
             "max_area": {
-                "label": "最大物件區域",
-                "description": "此物件類型允許的最大邊界框區域（像素或百分比）。可以是像素（整數）或百分比（0.000001 到 0.99 之間的浮點數）。"
+                "label": "最大物件面積",
+                "description": "此物件類型允許的最大邊界框面積（像素或百分比）。可以是像素（整數）或百分比（0.000001 到 0.99 之間的浮點數）。"
             },
             "min_ratio": {
-                "label": "最小縱橫比",
-                "description": "邊界框所需的最小寬高比。"
+                "label": "最小長寬比",
+                "description": "邊界框所需的最小長寬比。"
             },
             "max_ratio": {
-                "label": "最大縱橫比",
-                "description": "邊界框允許的最大寬高比。"
+                "label": "最大長寬比",
+                "description": "邊界框允許的最大長寬比。"
             },
             "threshold": {
                 "label": "信心度臨界值",
@@ -691,12 +691,12 @@
             "label": "屬性篩選器",
             "description": "篩選器用來篩選屬性，以此降低誤報（區域、比例、信心度）。",
             "min_area": {
-                "label": "最小屬性區域",
-                "description": "此屬性允許的最小邊界框區域（像素或百分比）。可以是像素（整數）或百分比（0.000001 到 0.99 之間的浮點數）。"
+                "label": "最小屬性面積",
+                "description": "此屬性允許的最小邊界框面積（像素或百分比）。可以是像素（整數）或百分比（0.000001 到 0.99 之間的浮點數）。"
             },
             "max_area": {
-                "label": "最大屬性區域",
-                "description": "此屬性允許的最大邊界框區域（像素或百分比）。可以是像素（整數）或百分比（0.000001 到 0.99 之間的浮點數）。"
+                "label": "最大屬性面積",
+                "description": "此屬性允許的最大邊界框面積（像素或百分比）。可以是像素（整數）或百分比（0.000001 到 0.99 之間的浮點數）。"
             },
             "min_ratio": {
                 "label": "最小長寬比",
@@ -1002,7 +1002,7 @@
         "label": "音訊轉錄",
         "description": "用於事件和即時字幕的即時和語音音訊轉錄設定。",
         "enabled": {
-            "label": "啟用語音轉文字",
+            "label": "啟用音訊轉錄",
             "description": "為所有攝影機啟用或停用自動音訊轉錄；可按攝影機覆蓋。"
         },
         "language": {
@@ -1103,7 +1103,7 @@
         },
         "model_size": {
             "label": "模型大小",
-            "description": "選擇模型大小；「小」模型可以在 CPU 上執行，「大」模型需要 GPU 才可以執行。"
+            "description": "選擇模型大小；「small」模型可以在 CPU 上執行，「large」模型需要 GPU 才可以執行。"
         },
         "device": {
             "label": "裝置",
@@ -1113,8 +1113,8 @@
             "label": "觸發器",
             "description": "攝影機特定語意搜尋觸發器的操作和相符條件。",
             "friendly_name": {
-                "label": "友好名稱",
-                "description": "在 UI 中為此觸發器顯示的可選友好名稱。"
+                "label": "顯示名稱",
+                "description": "在 UI 中為此觸發器顯示的可選顯示名稱。"
             },
             "enabled": {
                 "label": "開啟此觸發器",
@@ -1147,7 +1147,7 @@
         },
         "model_size": {
             "label": "模型大小",
-            "description": "用於人臉嵌入的（大／小）模型；大模型可能需要 GPU 才可以使用。"
+            "description": "用於人臉嵌入的（small/large）模型；大模型可能需要 GPU 才可以使用。"
         },
         "unknown_score": {
             "label": "未知分數臨界值",
@@ -1162,8 +1162,8 @@
             "description": "將兩張人臉視為相符的人臉嵌入距離臨界值。"
         },
         "min_area": {
-            "label": "最小人臉區域",
-            "description": "需要嘗試進行人臉辨識的人臉偵測框最小大小（像素）。"
+            "label": "最小人臉面積",
+            "description": "需要嘗試進行人臉辨識的人臉偵測框最小面積（像素）。"
         },
         "min_faces": {
             "label": "最小人臉數",
@@ -1191,15 +1191,15 @@
         },
         "model_size": {
             "label": "模型大小",
-            "description": "用於文字偵測／辨識的模型大小，大部分使用者應該使用「小」模型，只有它支援中文。"
+            "description": "用於文字偵測／辨識的模型大小，大部分使用者應該使用「small」模型，只有它支援中文。"
         },
         "detection_threshold": {
             "label": "偵測臨界值",
             "description": "開始對疑似車牌執行 OCR 的偵測信心度臨界值。"
         },
         "min_area": {
-            "label": "最小車牌區域",
-            "description": "嘗試辨識所需的最小車牌區域（像素）。"
+            "label": "最小車牌面積",
+            "description": "嘗試辨識所需的最小車牌面積（像素）。"
         },
         "recognition_threshold": {
             "label": "辨識臨界值",
@@ -1249,26 +1249,26 @@
         }
     },
     "camera_groups": {
-        "label": "攝影機分組",
-        "description": "用於在頁面中組織攝影機的命名攝影機分組配置。",
+        "label": "攝影機群組",
+        "description": "用於在頁面中組織攝影機的命名攝影機群組配置。",
         "cameras": {
             "label": "攝影機清單",
             "description": "此分組中包含的攝影機名稱陣列。"
         },
         "icon": {
             "label": "分組圖示",
-            "description": "在頁面中代表攝影機分組的圖示。"
+            "description": "在頁面中代表攝影機群組的圖示。"
         },
         "order": {
             "label": "排序順序",
-            "description": "用於在頁面中對攝影機分組進行排序的數字順序；數值越大越靠後。"
+            "description": "用於在頁面中對攝影機群組進行排序的數字順序；數值越大越靠後。"
         }
     },
     "profiles": {
         "label": "設定檔",
         "description": "帶有別名的命名設定檔定義。攝影機設定檔必須引用此處定義的名稱。",
         "friendly_name": {
-            "label": "別名",
+            "label": "顯示名稱",
             "description": "在介面中顯示的此設定檔名稱，可以使用中文。"
         }
     },
@@ -1310,13 +1310,13 @@
     },
     "camera_ui": {
         "label": "攝影機頁面",
-        "description": "此攝影機在頁面中的顯示順序和可見度。顯示順序僅影響預設儀錶板。如需更精細的控制，請使用「攝影機群組」。",
+        "description": "此攝影機在頁面中的顯示順序和可見度。顯示順序僅影響預設儀表板。如需更精細的控制，請使用「攝影機群組」。",
         "order": {
             "label": "UI 順序",
-            "description": "用於在頁面中排序攝影機的順序（只會影響預設儀錶板和清單）；數值越大則在越後面。"
+            "description": "用於在頁面中排序攝影機的順序（只會影響預設儀表板和清單）；數值越大則在越後面。"
         },
         "dashboard": {
-            "label": "在即時儀錶板上顯示",
+            "label": "在即時儀表板上顯示",
             "description": "切換此攝影機是否顯示在預設的「所有攝影機」即時監控面板上。此攝影機在使用者介面的其他所有位置（包括攝影機群組與設定）仍可正常使用。"
         },
         "review": {

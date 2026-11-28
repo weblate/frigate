@@ -13,7 +13,7 @@
     },
     "error": {
       "deleteImageFailed": "刪除失敗：{{errorMessage}}",
-      "deleteCategoryFailed": "刪除分類標籤失敗: {{errorMessage}}",
+      "deleteCategoryFailed": "刪除類別標籤失敗: {{errorMessage}}",
       "deleteModelFailed": "刪除模型失敗: {{errorMessage}}",
       "categorizeFailed": "圖片分類失敗: {{errorMessage}}",
       "trainingFailed": "模型訓練失敗。請至Frigate 日誌查看詳情。",
@@ -23,7 +23,7 @@
       "reclassifyFailed": "重新分類圖片失敗：{{errorMessage}}"
     }
   },
-  "documentTitle": "分類模型",
+  "documentTitle": "分類模型 - Frigate",
   "details": {
     "scoreInfo": "分數表示該物件所有偵測結果的平均分類信心度。",
     "none": "沒有",
@@ -31,8 +31,8 @@
   },
   "button": {
     "deleteClassificationAttempts": "刪除分類圖片",
-    "renameCategory": "重新命名分類",
-    "deleteCategory": "刪除分類",
+    "renameCategory": "重新命名類別",
+    "deleteCategory": "刪除類別",
     "deleteImages": "刪除圖片",
     "trainModel": "訓練模型",
     "addClassification": "新增分類",
@@ -108,7 +108,7 @@
       "description": "狀態模型監視固定攝影機區域的變化（例如：開關門）。物件模型為偵測到的物件（例如：已知動物、送貨員等等）新增分類。",
       "name": "名稱",
       "namePlaceholder": "請輸入模型名稱...",
-      "type": "類別",
+      "type": "類型",
       "typeState": "狀態",
       "typeObject": "物件",
       "classificationTypeDesc": "子標籤會為物件標籤新增附加文字（例如：「人員：UPS」）。屬性是可搜尋的中繼資料，獨立儲存在物件的中繼資料中。",
@@ -139,7 +139,7 @@
     },
     "title": "建立新分類",
     "step2": {
-      "description": "選擇攝影機，併為攝影機定義要監控的區域。模型將對這些區域的狀態進行分類。",
+      "description": "選擇攝影機，並為攝影機定義要監控的區域。模型將對這些區域的狀態進行分類。",
       "cameras": "攝影機",
       "selectCamera": "選擇攝影機",
       "noCameras": "點選 + 符號新增攝影機",

@@ -4,8 +4,8 @@
     "websocket_messages": "訊息",
     "dialog": {
         "title": "開始除錯重播",
-        "description": "建立臨時重播攝影機，循環播放歷史錄製影片，用於除錯物件偵測與追蹤相關問題。臨時重播的攝影機將沿用原攝影機的偵測配置。請選擇一個時間範圍開始。",
-        "camera": "原攝影機",
+        "description": "建立臨時重播攝影機，循環播放歷史錄製影片，用於除錯物件偵測與追蹤相關問題。臨時重播的攝影機將沿用來源攝影機的偵測配置。請選擇一個時間範圍開始。",
+        "camera": "來源攝影機",
         "timeRange": "時間範圍",
         "preset": {
             "1m": "最後 1 分鐘",
@@ -37,7 +37,7 @@
             "title": "除錯重播啟動失敗",
             "back": "返回歷史記錄"
         },
-        "sourceCamera": "源攝影機",
+        "sourceCamera": "來源攝影機",
         "replayCamera": "重播攝影機",
         "initializingReplay": "初始化除錯重播中…",
         "stoppingReplay": "正在停止除錯重播…",

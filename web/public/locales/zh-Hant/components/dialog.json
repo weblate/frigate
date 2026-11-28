@@ -38,7 +38,7 @@
     "time": {
       "fromTimeline": "從時間軸選擇",
       "lastHour_other": "過去 {{count}} 個小時",
-      "custom": "自定",
+      "custom": "自訂",
       "start": {
         "title": "開始時間",
         "label": "選擇開始時間"
@@ -117,7 +117,7 @@
       "exportingButton": "匯出中…",
       "toast": {
         "started_other": "已開始 {{count}} 個匯出。",
-        "partial": "已啟動 {{total}} 個匯出，其中 {{successful}} 個成功。失敗項：{{failedItems}}",
+        "partial": "已開始 {{total}} 個匯出中的 {{successful}} 個。失敗項目：{{failedItems}}",
         "failed": "啟動匯出失敗（共 {{total}} 個）。失敗項：{{failedItems}}"
       }
     }
@@ -125,7 +125,7 @@
   "streaming": {
     "label": "串流",
     "restreaming": {
-      "disabled": "此攝影機並未啟用串流重導向。",
+      "disabled": "此攝影機並未啟用轉發串流。",
       "desc": {
         "title": "設定 go2rtc 以啟用更多此攝影機的預覽選項及音訊。"
       }
@@ -177,7 +177,7 @@
     }
   },
   "imagePicker": {
-    "selectImage": "選取追蹤物件預覽圖",
+    "selectImage": "選取追蹤物件縮圖",
     "unknownLabel": "已儲存觸發圖片",
     "search": {
       "placeholder": "以標籤或子標籤搜尋..."

@@ -30,7 +30,7 @@
       "setting": {
         "label": "攝影機串流設定",
         "title": "{{cameraName}} 串流設定",
-        "desc": "變更此攝影機群組儀錶板的串流選項。<em>這些設定是裝置／瀏覽器專屬的。</em>",
+        "desc": "變更此攝影機群組儀表板的串流選項。<em>這些設定是裝置／瀏覽器專屬的。</em>",
         "audioIsAvailable": "此串流有提供音訊",
         "audioIsUnavailable": "此串流不提供音訊",
         "audio": {

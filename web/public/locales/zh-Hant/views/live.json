@@ -158,7 +158,7 @@
     "modes": {
       "all": "全部",
       "motion": "移動",
-      "active_objects": "活躍物件"
+      "active_objects": "活動物件"
     }
   },
   "editLayout": {
@@ -192,9 +192,9 @@
       "buttonText": "新增攝影機"
     },
     "group": {
-      "title": "攝影機組目前為空",
+      "title": "群組內無攝影機",
       "description": "此攝影機群組沒有已指派或已啟用的攝影機。",
-      "buttonText": "管理攝影機組"
+      "buttonText": "管理攝影機群組"
     }
   }
 }

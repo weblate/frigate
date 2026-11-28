@@ -114,7 +114,7 @@
       "processCpuUsage": "處理程序 CPU 使用率",
       "processMemoryUsage": "處理程序記憶體使用量",
       "series": {
-        "recording": "記錄",
+        "recording": "錄影",
         "review_segment": "審閱片段",
         "embeddings": "嵌入",
         "audio_detector": "音訊偵測器",
@@ -265,7 +265,8 @@
     "notices": {
       "kinds": {
         "shm_too_low": "/dev/shm 配置 ({{total}} MB) 應該增加至至少 {{min}} MB"
-      }
+      },
+      "streamPrefixRestream": "串流 {{index}}（透過 go2rtc）：{{message}}"
     }
   }
 }

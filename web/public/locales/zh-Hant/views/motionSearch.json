@@ -1,5 +1,5 @@
 {
-    "documentTitle": "變動搜尋 - Frigate",
+    "documentTitle": "移動搜尋 - Frigate",
     "title": "移動搜尋",
     "description": "繪製一個多邊形以劃定感興趣區域，並指定時間範圍，檢索該區域內的移動變化。",
     "selectCamera": "移動搜尋正在載入中",
@@ -43,10 +43,10 @@
         "parallelModeDesc": "同時掃描多個錄影片段（速度更快，但會消耗更多解碼資源）",
         "threshold": "靈敏度臨界值",
         "thresholdDesc": "數值越低，可偵測到越小的變化（取值範圍 1-255）",
-        "minArea": "最小變化區域",
+        "minArea": "最小變化面積",
         "minAreaDesc": "最小感興趣區域變化佔比，達到該比例才會判定為有效變動",
         "maxResults": "最大結果數",
-        "maxResultsDesc": "符合設定條數的錄影事件後，就自動停止"
+        "maxResultsDesc": "找到達到此數量的相符時間點後自動停止"
     },
     "errors": {
         "noCamera": "請選擇攝影機",
